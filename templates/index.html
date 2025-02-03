@@ -1,0 +1,345 @@
+{%load static%}
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <title>Website wanda</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+
+      /* Reset CSS */
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+    body {font-family: "Times New Roman", Georgia, Serif;}
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Playfair Display";
+      letter-spacing: 5px;
+    
+    }
+
+    body {
+      background-color: rgbEB5A3C; /* Ubah warna sesuai keinginan Anda */
+    }
+
+    body {
+      font-family: "Times New Roman", Georgia, Serif;
+      background: linear-gradient(to bottom, rgb(255, 235, 205), rgb(252, 199, 166)); /* Warna latar belakang gradasi */
+      margin: 0;
+      padding: 0;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Playfair Display";
+      letter-spacing: 5px;
+    }
+
+    /* Navbar */
+    .w3-top .w3-bar {
+      letter-spacing: 4px;
+      background: linear-gradient(to right, rgba(119, 43, 24, 0.8), rgba(220, 77, 25, 0.8));
+      color: white;
+      padding : 20px;
+      position: fixed; /* Menjadikan navbar tetap di atas saat scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    }
+
+    #home {
+      padding-top: 54px; /* Menambahkan ruang di atas konten untuk menghindari tumpang tindih dengan navbar */
+  }
+
+
+  
+
+    .w3-top .w3-bar .w3-bar-item {
+      font-weight: bold;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .w3-top .w3-bar .w3-bar-item:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+    .black-bold-text {
+      color: black;
+      font-weight: bold;
+    }
+
+    /* Footer */
+        .footer {
+            width: 100%; /* Full width */
+            background: linear-gradient(to right, rgba(119, 43, 24, 0.8), rgba(220, 77, 25, 0.8));/* Warna footer */
+            color: #FEF9E1; /* Warna teks */
+            padding: 20px 0; /* Jarak vertikal dalam footer */
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px; /* Konten footer dibatasi di tengah */
+            margin: 0 auto; /* Pusatkan konten */
+        }
+
+        .social-media {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center; /* Pusatkan ikon media sosial */
+            gap: 15px; /* Jarak antar ikon */
+        }
+
+        .social-icon img {
+            width: 30px; /* Ukuran ikon */
+            height: auto; /* Pertahankan rasio aspek */
+        }
+
+    </style>
+
+      </head>
+
+    <body>
+    
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+      <div class="w3-bar w3-padding w3-card" style="letter-spacing:4px; color: black;">
+        <a href="#home" class="w3-bar-item w3-button">Triwulanda</a>
+        <div class="w3-right w3-hide-small">
+          <a href="#home" class="w3-bar-item w3-button">Home</a>
+          <a href="#about" class="w3-bar-item w3-button">About</a>
+          <a href="#skill" class="w3-bar-item w3-button">Skill</a>
+        </div>
+      </div>
+    </div>
+    
+    
+    <!-- Header -->
+    <header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+      <div class="w3-content w3-display-container" style="max-width:100%">
+        <img class="mySlides" src="{% static 'images/sunset.png' %}" alt="Sun" width="500" height="800">
+        <div class="w3-display-middle w3-padding-large w3-opacity">
+          <h1 class="w3-large">Wanda</h1>
+        </div>
+        
+        
+        
+        <!-- Teks di kiri -->
+        <div class="w3-display-left w3-padding-large w3-opacity">
+          <h1 class="w3-xxlarge black-bold-text"><b>"Embracing </b></h1>
+          <h1 class="w3-xxlarge black-bold-text"><b> the tranquil beauty </b></h1>
+          <h1 class="w3-xxlarge black-bold-text"><b> of a setting sun"</b></h1>
+        </div>
+        
+        <!-- Teks di kanan -->
+        <div class="w3-display-right w3-padding-large w3-opacity">
+          <h1 class="w3-xxlarge black-bold-text"><b>"Chasing  </b></h1>
+          <h1 class="w3-xxlarge black-bold-text"><b>sunstes and dreams </b></h1>
+          <h1 class="w3-xxlarge black-bold-text"><b> on the horizon"</b></h1>
+        </div>
+        
+
+  <!-- Add CSS for automatic slide transition -->
+  <style>
+    .mySlides {
+      display: none;
+      margin-left: auto;
+      margin-right: auto;
+      /* Center the image horizontally */
+    }
+
+    /* Add animation for the slides */
+    @keyframes slideShow {
+      0% { opacity: 0; }
+      10% { opacity: 1; }
+      50% { opacity: 1; }
+      60% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    /* Animasi gradasi */
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+  
+
+  /* Kartu skill */
+  .skill-card {
+    background: linear-gradient(45deg,rgb(230, 174, 154),rgb(218, 119, 48));
+    background-size: 200% 200%;
+    animation: gradientMove 4s ease infinite;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    color: #000; /* Warna teks hitam */
+    font-weight: bold;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+
+
+    /* Efek hover untuk kartu */
+    .skill-card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Tombol */
+    .skill-button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 3px 10px;
+      font-size: 9px;
+      color: #fff;
+      background: linear-gradient(45deg,rgb(116, 60, 40),rgba(24, 14, 9, 0.87));
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+  
+    /* Responsif untuk mobile */
+    @media screen and (max-width: 768px) {
+      .skill-container {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .skill-button {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+    }
+    /* Responsiveness */
+  .image-hover-effect {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  /* Hover animation */
+  .image-hover-effect:hover {
+    transform: scale(1.1); /* Zoom in */
+    opacity: 0.9; /* Slight fade */
+    cursor: pointer;
+  }
+
+  /* Media Queries for Mobile */
+  @media (max-width: 768px) {
+    .image-hover-effect {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+
+  </style>
+  {%load static%}
+  <!-- Add JS to control the slideshow -->
+  <script>
+    let slideIndex = 0;
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("mySlides");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
+
+    showSlides(); // Start the slideshow
+  </script>
+</header>
+
+    
+    <!-- Page content -->
+    <div class="w3-content" style="max-width:1100px">
+    
+    <!-- About Section -->
+<div class="w3-row w3-padding-64" id="about">
+  <div class="w3-col m6 w3-padding-large w3-hide-small">
+    <img src="{% static 'images/wan.jpg' %}"
+        class="w3-round w3-image w3-opacity-min image-hover-effect" 
+        alt="Table Setting" 
+        width="600" 
+        height="750">
+  </div>
+
+  <div class="w3-col m6 w3-padding-large">
+    <h1 class="w3-center">About Me</h1><br>
+    <h5 class="w3-center">Hallo its me!</h5>
+    <p class="w3-large">Nama saya Triwulanda, Selamat datang di website saya!, dan saya senang bisa memperkenalkan diri saya dengan Anda melalui platform ini. Di sini, Anda bisa melihat bagaimana saya memiliki skill dan passion untuk menciptakan karya-karya yang berarti.<span class="w3-tag w3-light-grey"></span> </p>
+    <p class="w3-large">Namun sebelum itu saya memperkenalkan diri. Saya seorang mahasiswa, umur 21 tahun, lahir 21 Maret 2003, dan asal Mempawah </span></p>
+    <p class="w3-large">Selama 21 tahun ini, saya menyadari memiliki keahlian di beberapa bidang, antara lain bermain keyboard, badminton, tenis meja, gitar, dan memasak.<span style="font-size: 25px;">😊</span></p>
+  </div>
+</div>
+
+
+    <!-- Section My Skills -->
+<div class="w3-row w3-padding-64" id="skill">
+  <div class="w3-container w3-padding-64">
+    <h1 class="w3-center" style="color:rgb(5, 5, 5);">My Skills</h1>
+    <div class="w3-row-padding w3-margin-top w3-center">
+
+      <!-- Baris 1 -->
+      <div class="w3-col l6 m6 w3-margin-bottom skill-container">
+        <div class="skill-card">
+          <h3>Badminton</h3>
+          <a href="{% url 'key' %}" class="skill-button">Learn More</a>
+
+        </div>
+      </div>
+      <div class="w3-col l6 m6 w3-margin-bottom skill-container">
+        <div class="skill-card">
+          <h3>Tenis Meja</h3>
+          <a href="{% url 'tenis' %}" class="skill-button">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Baris 2 -->
+      <div class="w3-col l6 m6 w3-margin-bottom skill-container">
+        <div class="skill-card">
+          <h3>Memasak</h3>
+          <a href="{% url 'masak' %}" class="skill-button">Learn More</a>
+        </div>
+      </div>
+      <div class="w3-col l6 m6 w3-margin-bottom skill-container">
+        <div class="skill-card">
+          <h3>Gitar</h3>
+          <a href="{% url 'gitar' %}" class="skill-button">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+      <p>&copy; Triwulanda. All rights reserved.</p>
+      <div class="social-media">
+          <a href="https://www.instagram.com/hendry_aleng" target="_blank" class="social-icon">
+              <img src="{% static 'images/ig1.png' %}" alt="Instagram">
+          </a>
+      </div>
+  </div>
+</footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  </body>
+</html>
